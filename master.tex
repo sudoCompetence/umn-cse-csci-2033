@@ -59,7 +59,7 @@ oneside,
 
     \vfill
     \vspace{2cm}
-    {\LARGE\ Subject Matter\par} % Author name
+    {\LARGE\ Computational Linear Algebra\par} % Author name
     \vspace{0.5cm}
     {\large Tyson M. Koch\par} % author 
 
@@ -68,8 +68,8 @@ oneside,
 
     \vspace{1cm}
     {\small
-        % Author: Tyson M. Koch, A.S. Natural Science \\
-        Advisor: Professor Name, Ph.D.\\
+        Author: Tyson M. Koch, A.S. \\
+        Advisor: Bernardo Bianco Prado M.S. \\
         % Assistant: Teacher Assistant Name
     }
 
@@ -120,6 +120,889 @@ oneside,
 % ---------------------------------------------------------------------------------------
 % WORKING: Edit here
 % ---------------------------------------------------------------------------------------
+
+% Part: Introduction to Linear Algebra
+% ---------------------------------------------------------------------------------------
+\part{Introduction to Linear Algebra}
+
+% Chapter: Linear Equations & Matricies
+% ---------------------------------------------------------------------------------------
+\chapterimage{chapter-cover-one.jpg} % Chapter heading image
+\chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+\chapter{Linear Equations and Matricies}\index{Matricies}
+
+% Section: Linear Equaions
+% ---------------------------------------------------------------------------------------
+\section{Linear Equations}\index{Matricies!LinearEquations}
+Linear algebra is a systematic analysis of linear equations whose applications
+range from functional analysis to quantum mechanics. "In all of mathematics,
+the concept of linearization is critical because linear problems are
+very well understood and we can say a lot about them. For this reason we try to convert
+many areas of mathematics to linear problems so that we can solve them." \cite{singh-2013}
+
+\begin{definition}
+    An \textbf{equation} is two equivalent mathematical statements.
+\end{definition}
+
+\begin{definition}
+    \textbf{\textit{Linear Equation}} \\
+    Equation such that each term is a \textbf{scaler} $s_n$,
+    multiplied by a variables $v_n$,
+    of \textbf{index (power) of 1 or 0}
+    \begin{displaymath}
+        (s_1)^1 (v_1)^1 + ... + (s_n)^1 (v_n)^1 = k
+    \end{displaymath}
+\end{definition}
+\begin{remark}
+    Note that if an equation contains an argument of trigonometric, exponential,
+    logarithmic or hyperbolic functions then the equation is not linear.
+\end{remark}
+
+\begin{definition}
+    \textbf{\textit{System of Linear Equation}} \\
+    \textbf{Linear System} is a set of two or more linear equations such that:
+    \begin{align*}
+        (s_{11})^1 (v_1)^1 + (s_{12})^1 (v_1)^1 + ... + (s_{1n})^1 (v_n)^1 = k_1 \\
+        (s_{21})^1 (v_2)^1 + (s_{22})^1 (v_2)^1 + ... + (s_{2n})^1 (v_n)^1 = k_2 \\
+        (s_{31})^1 (v_3)^1 + (s_{32})^1 (v_3)^1 + ... + (s_{3n})^1 (v_n)^1 = k_3 \\
+    \end{align*}
+\end{definition}
+
+\begin{corollary}
+    Three operations of linear equations
+    \begin{enumerate}
+        \item Interchange \textbf{equations}
+        \item Multiply \textit{\textbf{equations} by non-zero constant}
+        \item Add or subtract \textit{one \textbf{equation} from another}
+    \end{enumerate}
+\end{corollary}
+
+% Subsection: Solving Linear Equaions
+% ---------------------------------------------------------------------------------------
+\subsection{Solving Linear Equations}\index{LinearEquations!Solving}
+\begin{exercise}
+    \textbf{Solve Linear Equation}
+    \begin{proposition}
+        \textit{Let:}
+        \begin{alignat}{3}
+            3x + {} &&  y - {} &&  2z &= 4   \\
+            5x - {} && 3y + {} && 10z &= 32  \\   
+            7x + {} && 4y + {} && 16z &= 13
+        \end{alignat}
+    \end{proposition}
+
+    \newpage\noindent Eliminate y
+    \begin{alignat*}{3}
+        (3)(3x + y  - 2z = 4) + {} && (5x - 3y + 10z = 32) &= (14x + 4z  = 4) \\
+        (4)(3x + y  - 2z = 4) - {} && (7x + 4y + 16z = 13) &= ( 5x - 24z = 3)
+    \end{alignat*}
+
+    \noindent Eliminate z
+    \begin{align*}
+        & (6)(14x + 4z  = 4) + (5x - 24z = 3) = (89x = 267) \\
+        & \therefore x = 3
+    \end{align*}
+
+    \noindent Back substitution 
+    \begin{align*}
+        & [5x - 24z = 3] \equiv [5(3) - 24z = 3] \mid (x=3) \\
+        & \therefore z = \frac{1}{2} \\ \\
+        & [3x + y - 2z = 4] \equiv [3(3) + y - 2(\frac{1}{2}) = 4] \mid (x=3, z=\frac{1}{2}) \\
+        & \therefore y = -4
+    \end{align*}
+\end{exercise}
+
+% Subsection: Intercepts & Graphing
+% ---------------------------------------------------------------------------------------
+\newpage
+\subsection{Intercepts \& Graphing}\index{LinearEquaions!Intercepts}
+\begin{exercise}
+    \textbf{Intercepts \& Solution}
+    \begin{proposition}
+        \textit{Let:}
+        \begin{alignat}{3}
+            5x - {}&& 2y &= 5 \\
+            3x - {}&& 2y &= 3
+        \end{alignat}
+    \end{proposition}
+
+    \noindent Solve for $(x_1, y_1) \in (5x-2y=5) \mid (x=0, y=0)$
+    \begin{alignat*}{2}
+        x_1 = \frac{2(0)+5}{5} = 1 \\
+        y_1 = \frac{5(0)-5}{2} = -\frac{5}{2}
+    \end{alignat*}
+    $\therefore (x_1, y_1) = (1, \frac{5}{2})$ \\
+
+    \noindent Solve for $(x_2, y_2) \in (3x-2y=3) \mid (x=0, y=0)$
+    \begin{alignat*}{2}
+        x_2 = \frac{2(0)+3}{3} = 1 \\
+        y_2 = \frac{3(0)-3}{2} = -\frac{3}{2}
+    \end{alignat*}
+    $\therefore (x_2, y_2) = (1, -\frac{3}{2})$
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.35\textwidth]{math.png}
+        \caption{X \& Y Intercepts.}
+        % \label{fig:intercepts}
+    \end{figure}
+\end{exercise}
+
+% Subsection: Matrix
+% ---------------------------------------------------------------------------------------
+\newpage
+\subsection{Matrix}\index{Matrix!}
+\begin{definition}
+    \textbf{\textit{Matrix}}
+    \begin{proposition}
+        \textit{Let the sytem of linear equations be defined as:}
+        \begin{align*}
+            (s_{11})^1 (v_1)^1 + (s_{12})^1 (v_1)^1) + ... + (s_{1n})^1 (v_n)^1 = k_1 \\
+            (s_{21})^1 (v_2)^1 + (s_{22})^1 (v_2)^1) + ... + (s_{2n})^1 (v_n)^1 = k_2 \\
+            (s_{31})^1 (v_3)^1 + (s_{32})^1 (v_3)^1) + ... + (s_{3n})^1 (v_n)^1 = k_3
+        \end{align*}
+    \end{proposition}
+
+    \begin{displaymath}
+        M =
+        \left[
+            \begin{array}{ccc|c}
+                s_{11} & s_{12} & s_{13} & k_1 \\
+                s_{21} & s_{12} & s_{13} & k_2 \\
+                .      & .      & .            \\
+                s_{1n} & s_{1n} & s_{1n} & k_3
+            \end{array}
+        \right]
+    \end{displaymath}
+\end{definition}
+
+\begin{corollary}
+    Three operations of matricies
+    \begin{enumerate}
+        \item Interchange rows 
+        \item Multiply \textit{\textbf{rows} by non-zero constant}
+        \item Add or subtract \textit{one \textbf{row} from another}
+    \end{enumerate}
+\end{corollary}
+
+% Section: Gaussian Elimination
+% ---------------------------------------------------------------------------------------
+\section{Gaussian Elimination}\index{Matrix!Gaussian}
+"Johann Carl Friedrich Gauss, a prolific German mathematician,
+is widely regarded as one of the three greatest mathematicians of all time,
+the others being of course Archimedes and Sir Isaac Newton."
+
+"Gauss went as a student to the world-renowned centre for mathematics – Göttingen.
+Later in life, Gauss took up a post at Göttingen and published papers in number theory,
+infinite series, algebra, astronomy and optics.
+The unit of magnetic induction is (also) named after Gauss." \cite{singh-2013}
+
+\begin{definition}[Reduced Row Form]
+    \begin{displaymath}
+        M =
+        \left[
+            \begin{array}{ccc|c}
+                * & * & * & *\\
+                0 & * & * & *\\
+                0 & 0 & A & B
+            \end{array}
+        \right] \mid A = B
+    \end{displaymath}
+\end{definition}
+
+\begin{definition}[Reduced Row Echelon Form]
+    A matrix is in reduced row echelon form,
+    normally abbreviated to \textbf{rref} if and only if: \\
+    \begin{enumerate}
+        \item \textbf{Zeroed Rows:} Rows with all zero must be at bottom of matrix.
+        \item \textbf{Leading One:} Non-Zeroed Rows must have leading 1.
+        \item \textbf{Columns Below Leading One:} Leading 1 only non-zero digit in column.
+        \item \textbf{Consecutive Leading Ones:} The leading 1 from consecutive rows must go
+            strictly from top-left to bottom-right on the matrix. \\
+    \end{enumerate}
+    \begin{displaymath}
+        M =
+        \left[
+            \begin{array}{ccc|c}
+                1 & 0 & 0 & * \\
+                0 & 1 & 0 & * \\
+                0 & 0 & 1 & *
+            \end{array}
+        \right]
+    \end{displaymath}
+\end{definition}
+
+\newpage\begin{exercise}{Gaussian Elimination}
+    \begin{proposition}
+        \textit{Let:}
+        \begin{alignat}{3}
+            x  + {} && 3y + {} &&  2z &= 13  \\
+            4x + {} && 4y - {} &&  3z &=  3  \\   
+            5x + {} &&  y + {} &&  2z &= 13 
+        \end{alignat}
+    \end{proposition}
+
+    \begin{displaymath}
+        M =
+        \left[
+            \begin{array}{ccc|c}
+                1 & 3 &  2 & 13 \\
+                4 & 4 & -3 &  3 \\
+                5 & 1 &  2 & 13
+            \end{array}
+        \right]
+    \end{displaymath}
+
+    \noindent Zero out first column
+    \begin{displaymath}
+        \begin{aligned}
+            R_1 \\
+            R_2^{\dagger} = R_2 - 4R_1 \\
+            R_3^{\dagger} = R_3 - 5R_1 \\
+        \end{aligned}
+        \left(
+            \begin{array}{ccc|c}
+                1 & 3 & 2 & 13\\
+                0 & -8 & -11 & -49\\
+                0 & -14 & -8 & -52\\
+            \end{array}
+        \right)
+    \end{displaymath}
+
+    \noindent Zero out last row, second column
+    \begin{displaymath}
+        \begin{aligned}
+            R_1 \\
+            R_2^{\dagger} \\
+            R_3^{\dagger\dagger} = R_3^{\dagger} - \frac{14}{8}R_2^{\dagger} \\
+        \end{aligned}
+        \left(
+            \begin{array}{ccc|c}
+                1 & 3 & 2 & 13\\
+                0 & -8 & -11 & -49\\
+                0 &  0 & \frac{45}{4} & \frac{135}{4} \\
+            \end{array}
+        \right)
+    \end{displaymath}
+
+    \noindent Solve for z
+    \begin{displaymath}
+        \begin{aligned}
+            R_1 \\
+            R_2^{\dagger} \\
+            R_3^{\dagger\dagger\dagger} = \frac{4}{45}R_3^{\dagger\dagger}
+        \end{aligned}
+        \left(
+            \begin{array}{ccc|c}
+                1 & 3 & 2 & 13\\
+                0 & -8 & -11 & -49\\
+                0 &  0 & 1 & 3 \\
+            \end{array}
+        \right)
+    \end{displaymath}
+
+    \noindent Solve for $(y) \in (-8y-11z=-49) \mid z=3$
+    \begin{align}
+        (-8y - 11z = -49) \equiv [-8y-11(3)=-49] \equiv (-8y=-16)
+    \end{align}
+    $\therefore y = 2$ \\
+
+    \noindent Solve for $(x) \in (x+3y+2z=13) \mid (y=2, z=3)$
+    \begin{align}
+        (x+3y+2z=13) \equiv [x+3(2)+2(3)=13] \equiv (x=1)
+    \end{align}
+    $\therefore (x=1, y=2, z=3)$
+\end{exercise}
+
+\newpage
+\begin{exercise}{Reduced Row Echelon Form}
+    \begin{proposition}
+        \textit{Let:}
+        \begin{displaymath}
+            \begin{aligned}
+                R_1 \\
+                R_2 \\
+                R_3
+            \end{aligned}
+            \left(
+                \begin{array}{ccc|c}
+                    1 & 3  &   2 &  13 \\
+                    0 & -8 & -11 & -49 \\
+                    0 &  0 &   1 &   3 \\
+                \end{array}
+            \right)
+        \end{displaymath}
+    \end{proposition}
+
+    \noindent Resolve the second row, last column to 0
+    \begin{displaymath}
+        \begin{aligned}
+            R_1 \\
+            R_2^{\dagger} = R_2 - (11)(R_3) \\
+            R_3
+        \end{aligned}
+        \left(
+            \begin{array}{ccc|c}
+                1 & 3  &   2 &  13 \\
+                0 & -8 &   0 & -16 \\
+                0 &  0 &   1 &   3 \\
+            \end{array}
+        \right)
+    \end{displaymath}
+
+    \noindent Resolve the second row, second column to 1
+    \begin{displaymath}
+        \begin{aligned}
+            R_1 \\
+            R_2^{\dagger\dagger} = (R_2^{\dagger})(-\frac{1}{8}) \\
+            R_3
+        \end{aligned}
+        \left(
+            \begin{array}{ccc|c}
+                1  &  3  &   2  &  13 \\
+                0  &  1  &   0  &   2 \\
+                0  &  0  &   1  &   3 \\
+            \end{array}
+        \right)
+    \end{displaymath}
+
+    \noindent Resolve the second row, second column to 1
+    \begin{displaymath}
+        \begin{aligned}
+            R_1^{\dagger} = R_1 - (2)(R_3) \\
+            R_2^{\dagger\dagger} \\
+            R_3
+        \end{aligned}
+        \left(
+            \begin{array}{ccc|c}
+                1  &  3  &   0  &   7 \\
+                0  &  1  &   0  &   2 \\
+                0  &  0  &   1  &   3 \\
+            \end{array}
+        \right)
+    \end{displaymath}
+
+    \begin{displaymath}
+        \begin{aligned}
+            R_1^{\dagger\dagger} = R_1^{\dagger} - (3)(R_2^{\dagger\dagger}) \\
+            R_2^{\dagger\dagger} \\
+            R_3
+        \end{aligned}
+        \left(
+            \begin{array}{ccc|c}
+                1  &  0  &   0  &   1 \\
+                0  &  1  &   0  &   2 \\
+                0  &  0  &   1  &   3 \\
+            \end{array}
+        \right)
+    \end{displaymath}
+    $\therefore (x=1, y=2, z=3)$
+\end{exercise}
+
+% Section: Vector Arithmetic 
+% ---------------------------------------------------------------------------------------
+\newpage
+\section{Vector Arithmetic}\index{Introductions!Vectors}
+With respect to vectors, physicists rely upon vectors to mathematically express the motion of an
+object in terms of its direction, as well as the rate that it is travelling. Engineers will
+use a vector to express the magnitude of a force and the direction in which it is acting.
+
+\noindent\begin{definition}
+    \textbf{Scaler} \\
+    Numerical value that quantifies a qualitative phonomena.
+    \textit{Denoted with numerical values}
+\end{definition}
+
+\noindent\begin{definition}
+    \textbf{Vector} \
+    Symbolic representation of a numerical quantities of \textit{magnitude \& direction.}
+    \textit{Usually denoted with lowercase letter}
+    \begin{displaymath}
+        \vec{v}
+    \end{displaymath}
+\end{definition}
+
+\noindent\begin{definition}
+    \textbf{Vector Addition} \\
+    Operation that combines two vectors of the same dimension by adding corresponding components, producing a new vector in the same space.
+    \begin{displaymath}
+        \vec{u} + \vec{v}
+        =
+        \begin{bmatrix}
+            u_1 \\ u_2 \\ \vdots \\ u_n
+        \end{bmatrix}
+        +
+        \begin{bmatrix}
+            v_1 \\ v_2 \\ \vdots \\ v_n
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            u_1+v_1 \\ u_2+v_2 \\ \vdots \\ u_n+v_n
+        \end{bmatrix}
+    \end{displaymath}
+\end{definition}
+
+\noindent\begin{definition}
+    \textbf{Dot Product} \\
+    Operation on two vectors of the same dimension that returns a scalar, computed as the sum of products of corresponding components.
+    \begin{displaymath}
+        \vec{u}\cdot\vec{v}
+        =
+        \begin{bmatrix}
+            u_1 \\ u_2 \\ \vdots \\ u_n
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+            v_1 \\ v_2 \\ \vdots \\ v_n
+        \end{bmatrix}
+        =
+        \sum_{i=1}^{n} u_i v_i
+        =
+        u_1v_1 + u_2v_2 + \cdots + u_nv_n
+    \end{displaymath}
+\end{definition}
+
+\noindent\begin{definition}
+    \textbf{Linear Combination} \\
+    Expression formed by scaling vectors and adding them together, producing a vector in the same space.
+    \begin{displaymath}
+        c_1\vec{v}_1 + c_2\vec{v}_2 + \cdots + c_k\vec{v}_k
+    \end{displaymath}
+    Where $c_1,c_2,\ldots,c_k$ are scalars and $\vec{v}_1,\vec{v}_2,\ldots,\vec{v}_k$ are vectors in $\mathbb{R}^n$.
+    \begin{displaymath}
+        c_1
+        \begin{bmatrix}
+            v_{11}\\ v_{12}\\ \vdots\\ v_{1n}
+        \end{bmatrix}
+        +
+        c_2
+        \begin{bmatrix}
+            v_{21}\\ v_{22}\\ \vdots\\ v_{2n}
+        \end{bmatrix}
+        +
+        \cdots
+        +
+        c_k
+        \begin{bmatrix}
+            v_{k1}\\ v_{k2}\\ \vdots\\ v_{kn}
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            c_1v_{11}+c_2v_{21}+\cdots+c_kv_{k1}\\
+            c_1v_{12}+c_2v_{22}+\cdots+c_kv_{k2}\\
+            \vdots\\
+            c_1v_{1n}+c_2v_{2n}+\cdots+c_kv_{kn}
+        \end{bmatrix}
+    \end{displaymath}
+\end{definition}
+
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+    \centering % Horizontally center the figure on the page
+    \includegraphics[width=0.75\textwidth]{vectors/addition-one.png} % Include the figure image
+    \caption{Vector Addition Example.}
+    % \label{fig:vector-one} % Unique label used for referencing the figure in-text
+\end{figure}
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+    \centering % Horizontally center the figure on the page
+    \includegraphics[width=0.75\textwidth]{vectors/addition-two.png} % Include the figure image
+    \caption{Another Vector Addition Example.}
+    % \label{fig:vector-one} % Unique label used for referencing the figure in-text
+\end{figure}
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+    \centering % Horizontally center the figure on the page
+    \includegraphics[width=0.75\textwidth]{vectors/cordinates.png} % Include the figure image
+    \caption{Vector Cordinates.}
+    % \label{fig:vector-one} % Unique label used for referencing the figure in-text
+\end{figure}
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+    \centering % Horizontally center the figure on the page
+    \includegraphics[width=0.5\textwidth]{vectors/r3.png} % Include the figure image
+    \caption{Vector in $\mathbb{R}^3$}
+    % \label{fig:vector-one} % Unique label used for referencing the figure in-text
+\end{figure}
+
+% Section: 
+% ---------------------------------------------------------------------------------------
+\section{Matrix Arithmetic}\index{Matricies!Arithmetic}
+Computer graphics are essentially created using high-speed transformations. For example,
+a computer animated sequence is based on modelling surfaces of connecting triangles. The
+computer stores the vertices of the triangle in its memory and then certain operations such
+as rotations, translations, reﬂections and enlargements are carried out by (transformation)
+matrices.
+In this context, we apply a (transformation) matrix in order to perform a function such
+as rotation, reﬂection or translation, 
+
+% Subsection: Matrix Addition
+% ---------------------------------------------------------------------------------------
+\subsection{Matrix Addition}\index{Arithmetic!Addition}
+\noindent\begin{definition}
+    \textbf{Matrix Addition} \\
+    Operation that combines two matrices of the same dimension by adding corresponding entries, producing a new matrix of the same size.
+    \begin{displaymath}
+        A + B
+        =
+        \begin{bmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{m1} & a_{m2} & \cdots & a_{mn}
+        \end{bmatrix}
+        +
+        \begin{bmatrix}
+            b_{11} & b_{12} & \cdots & b_{1n} \\
+            b_{21} & b_{22} & \cdots & b_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            b_{m1} & b_{m2} & \cdots & b_{mn}
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1n}+b_{1n} \\
+            a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2n}+b_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdots & a_{mn}+b_{mn}
+        \end{bmatrix}
+    \end{displaymath}
+\end{definition}
+
+% Subsection: Matrix-Vector Product
+% ---------------------------------------------------------------------------------------
+\subsection{Matrix-Vector Product}\index{Arithmetic!VectorMatrixProduct}
+\noindent\begin{definition}
+    \textbf{Matrix-Vector Product} \\
+    A linear system can be written as a linear combination of column vectors, and equivalently in matrix form \(A\mathbf{x}=\mathbf{b}\).
+    \begin{displaymath}
+        \left[\begin{array}{c}
+            2\\
+            2
+        \end{array}\right]x
+        +
+        \left[\begin{array}{c}
+            2\\
+            1
+        \end{array}\right]y
+        =
+        \left[\begin{array}{c}
+            3\\
+            2.5
+        \end{array}\right]
+        \iff
+        \begin{bmatrix}
+            2 & 2\\
+            2 & 1
+        \end{bmatrix}
+        \begin{bmatrix}
+            x\\
+            y
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            3\\
+            2.5
+        \end{bmatrix}
+    \end{displaymath}
+\end{definition}
+
+\newpage
+\begin{exercise}{Matrix Form $Ax=b$}
+    \begin{proposition}
+        \textit{Let:}
+        \begin{alignat}{3}
+            x + {} && y + {} && 3z &= 5 \\
+           -2x - {} && y + {} && 5z &= 6
+        \end{alignat}
+    \end{proposition}
+    % Matrix form
+    \begin{displaymath}
+        A =
+        \begin{bmatrix}
+            1 & 1 & 3 \\
+           -2 & -1 & 5
+        \end{bmatrix},
+        \quad
+        \mathbf{x} =
+        \begin{bmatrix}
+            x \\ y \\ z
+        \end{bmatrix},
+        \quad
+        \mathbf{b} =
+        \begin{bmatrix}
+            5 \\ 6
+        \end{bmatrix}
+    \end{displaymath}
+    \begin{displaymath}
+        A\mathbf{x}=\mathbf{b}
+    \end{displaymath}
+\end{exercise}
+
+\begin{definition}
+    \textbf{Matrix-Vector Multiplication} \\
+    Operation that multiplies an \(m \times n\) matrix by an \(n \times 1\) vector, producing an \(m \times 1\) vector.
+    \begin{displaymath}
+        A\mathbf{x}
+        =
+        \begin{bmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{m1} & a_{m2} & \cdots & a_{mn}
+        \end{bmatrix}
+        \begin{bmatrix}
+            x_1 \\
+            x_2 \\
+            \vdots \\
+            x_n
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n \\
+            a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n \\
+            \vdots \\
+            a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n
+        \end{bmatrix}
+    \end{displaymath}
+\end{definition}
+
+% Subsection: Matrix-Matrix Product 
+% ---------------------------------------------------------------------------------------
+\subsection{Matrix-Matrix Product}\index{Arithmetic!MatrixMatrixProduct}
+\begin{definition}
+    \textbf{Matrix-Matrix Multiplication} \\
+    Operation that multiplies an \(m \times n\) matrix by an \(n \times p\) matrix, producing an \(m \times p\) matrix. Each entry is the dot product of a row of the first matrix with a column of the second matrix.
+    \begin{displaymath}
+        AB
+        =
+        \begin{bmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{m1} & a_{m2} & \cdots & a_{mn}
+        \end{bmatrix}
+        \begin{bmatrix}
+            b_{11} & b_{12} & \cdots & b_{1p} \\
+            b_{21} & b_{22} & \cdots & b_{2p} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            b_{n1} & b_{n2} & \cdots & b_{np}
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            c_{11} & c_{12} & \cdots & c_{1p} \\
+            c_{21} & c_{22} & \cdots & c_{2p} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            c_{m1} & c_{m2} & \cdots & c_{mp}
+        \end{bmatrix}
+    \end{displaymath}
+    where
+    \begin{displaymath}
+        c_{ij} = a_{i1}b_{1j} + a_{i2}b_{2j} + \cdots + a_{in}b_{nj}
+        = \sum_{k=1}^{n} a_{ik}b_{kj}.
+    \end{displaymath}
+\end{definition}
+
+\begin{example}
+    \textbf{Matrix-Matrix Multiplication (2 \(\times\) 2 Form)} \\
+    Multiply each row of the first matrix by each column of the second matrix (row-by-column dot products).
+    \begin{displaymath}
+        \begin{pmatrix}
+            a & b \\
+            c & d
+        \end{pmatrix}
+        \times
+        \begin{pmatrix}
+            e & f \\
+            g & h
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            ae+bg & af+bh \\
+            ce+dg & cf+dh
+        \end{pmatrix}
+    \end{displaymath}
+\end{example}
+
+\begin{remark}
+    In general, if $A$ is a $m \times r$ (m rows by r columns) matrix and
+    $B$ is a $r \times n$ (r rows by n columns) matrix
+    then the multiplication $AB$ results in a $m \times n$ matrix.
+\end{remark}
+\begin{remark}
+    Matrix multiplication is only valid when the \textbf{\textit{inner}} dimensions
+    of two matricies are equivalent. \\
+    i.e. $(2\times4)\dot(4\times4)$ is \textbf{valid} \\
+    i.e. $(4\times4)\dot(2\times4)$ is \textbf{invalid}
+\end{remark}
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+    \centering % Horizontally center the figure on the page
+    \includegraphics[width=0.5\textwidth]{matrix/dimensions.png} % Include the figure image
+    \caption{Resultant matrix multiplication dimensions}
+    % \label{fig:vector-one} % Unique label used for referencing the figure in-text
+\end{figure}
+
+% Section: Matrix Algebra
+% ---------------------------------------------------------------------------------------
+\section{Matrix Algebra}\index{Matricies!MatrixAlgebra}
+Now we shall examine the algebraic properties of vectors and matricies.
+"Matrix powers are particularly useful in Markov chains – these are based on matrices whose
+entries are probabilities. Many real life systems have an element of uncertainty and develop
+over time and this can be explained through Markov chains.
+A Markov chain is a sequence of random variables with the property that given the
+present state, the future and past states are independent. For example, the game Monopoly
+where the states are determined entirely by dice is a Markov chain. However, games like
+poker are not a Markov chain because what is displayed depends on past moves.
+See question 10 of Exercises 1.5 for a concrete example"" \cite{singh-2013}
+
+Note that "Mathematical proof is a lot more powerful than a scientiﬁc proof because it is not subject
+to experimental data, so once we have carried out a mathematical proof we know that our
+result is absolutely correct and permanent." \cite{singh-2013}
+
+\begin{definition}
+    \textbf{Zero Matrix} \\
+    A matrix in which every entry is \(0\). The zero matrix of size \(m \times n\) is denoted by \(0_{m\times n}\).
+    \begin{displaymath}
+        0_{m\times n}
+        =
+        \begin{bmatrix}
+            0 & 0 & \cdots & 0 \\
+            0 & 0 & \cdots & 0 \\
+            \vdots & \vdots & \ddots & \vdots \\
+            0 & 0 & \cdots & 0
+        \end{bmatrix}
+    \end{displaymath}
+\end{definition}
+
+\begin{definition}
+    \textbf{Identity Matrix} \\
+    A square matrix with \(1\)s on the main diagonal and \(0\)s elsewhere. The identity matrix of size \(n \times n\) is denoted by \(I_n\).
+    \begin{displaymath}
+        I_n
+        =
+        \begin{bmatrix}
+            1 & 0 & \cdots & 0 \\
+            0 & 1 & \cdots & 0 \\
+            \vdots & \vdots & \ddots & \vdots \\
+            0 & 0 & \cdots & 1
+        \end{bmatrix}
+    \end{displaymath}
+\end{definition}
+
+\begin{definition}
+    \textbf{Diagonal Matrix} \\
+    A square matrix in which all off-diagonal entries are \(0\). Diagonal entries may be any scalars.
+    \begin{displaymath}
+        D
+        =
+        \begin{bmatrix}
+            d_1 & 0 & \cdots & 0 \\
+            0 & d_2 & \cdots & 0 \\
+            \vdots & \vdots & \ddots & \vdots \\
+            0 & 0 & \cdots & d_n
+        \end{bmatrix}
+    \end{displaymath}
+\end{definition}
+
+\begin{definition}
+    \textbf{Scalar Matrix} \\
+    A diagonal matrix whose diagonal entries are all equal to the same scalar \(\lambda\).
+    \begin{displaymath}
+        \lambda I_n
+        =
+        \begin{bmatrix}
+            \lambda & 0 & \cdots & 0 \\
+            0 & \lambda & \cdots & 0 \\
+            \vdots & \vdots & \ddots & \vdots \\
+            0 & 0 & \cdots & \lambda
+        \end{bmatrix}
+    \end{displaymath}
+\end{definition}
+
+\begin{definition}
+    \textbf{Row Matrix} \\
+    A matrix with exactly one row (size \(1 \times n\)).
+    \begin{displaymath}
+        \begin{bmatrix}
+            a_1 & a_2 & \cdots & a_n
+        \end{bmatrix}
+    \end{displaymath}
+\end{definition}
+
+\begin{definition}
+    \textbf{Column Matrix} \\
+    A matrix with exactly one column (size \(m \times 1\)).
+    \begin{displaymath}
+        \begin{bmatrix}
+            a_1 \\
+            a_2 \\
+            \vdots \\
+            a_m
+        \end{bmatrix}
+    \end{displaymath}
+\end{definition}
+
+\begin{definition}
+    \textbf{Square Matrix} \\
+    A matrix with the same number of rows and columns (size \(n \times n\)).
+    \begin{displaymath}
+        A
+        =
+        \begin{bmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{n1} & a_{n2} & \cdots & a_{nn}
+        \end{bmatrix}
+    \end{displaymath}
+\end{definition}
+
+\newpage
+\begin{theorem}
+    \textbf{Properties of Matrix Addition} \\
+    Let \(A, B,\) and \(C\) be matrices of the same size \(m \times n\). Then:
+    \begin{enumerate}
+        \item \(A + B = B + A\) \hfill (Commutative law)
+        \item \((A + B) + C = A + (B + C)\) \hfill (Associative law)
+        \item \(A + A + \cdots + A = kA\) \hfill (\(k\) copies of \(A\))
+        \item There exists a zero matrix \(O\) such that \(A + O = A\).
+        \item For each \(A\), there exists \(-A\) such that
+        \[
+            A + (-A) = A - A = O.
+        \]
+        The matrix \(-A\) is called the additive inverse of \(A\).
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    \textbf{Properties of Matrix Multiplication} \\
+    Let \(A, B,\) and \(C\) be matrices of appropriate sizes so that each product is defined. Then:
+    \begin{enumerate}
+        \item \((AB)C = A(BC)\) \hfill (Associative law)
+        \item \(A(B + C) = AB + AC\) \hfill (Left distributive law)
+        \item \((B + C)A = BA + CA\) \hfill (Right distributive law)
+        \item \(AO = OA = O\), where \(O\) is a zero matrix of compatible size.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    \textbf{Scalar-Matrix Distribution Laws} \\
+    Let \(A\) and \(B\) be \(m \times n\) matrices, and let \(c, k\) be scalars. Then:
+    \begin{enumerate}
+        \item \((ck)A = c(kA)\)
+        \item \(k(A + B) = kA + kB\)
+        \item \((c + k)A = cA + kA\)
+    \end{enumerate}
+\end{theorem}
+
+% \begin{definition}
+%     \textbf{Additive Inverse of a Matrix} \\
+%     For a matrix \(A = [a_{ij}]\), the additive inverse is the matrix \(-A = [-a_{ij}]\), satisfying
+%     \[
+%         A + (-A) = O.
+%     \]
+% \end{definition}
+%
+% \begin{definition}
+%     \textbf{Compatible Dimensions for Multiplication} \\
+%     If \(A\) is \(m \times n\) and \(B\) is \(n \times p\), then \(AB\) is defined and has size \(m \times p\).
+% \end{definition}
 
 
 % WARNING: STOP!
