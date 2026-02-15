@@ -1,0 +1,565 @@
+%	BEGIN: PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[
+12pt, % Default font size, select one of 10pt, 11pt or 12pt
+a4paper, % Paper size, use either 'a4paper' for A4 size or 'letterpaper' for US letter size
+fleqn,   % Left align equations
+% Uncomment for oneside mode, this doesn't start new chapters and parts on odd pages
+% (adding an empty page if required), this mode is more suitable if the book is to be read on a screen instead of printed
+oneside, 
+]{master}
+% \documentclass[12pt, letterpaper]{book}
+
+% Book information for PDF metadata, remove/comment this block if not required 
+\hypersetup{
+    pdftitle={Title}, % Title field
+    pdfauthor={Author}, % Author field
+    pdfsubject={Subject}, % Subject field
+    pdfkeywords={Keyword1, Keyword2, ...}, % Keywords
+    pdfcreator={LaTeX}, % Content creator field
+}
+    
+% Definitions
+\definecolor{ocre}{RGB}{128, 0, 0} % Define the color used for highlighting throughout the book
+
+% Opening background
+\chapterimage{chapter-cover-one.jpg} % Chapter heading image
+\chapterspaceabove{6.5cm} % Default whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{6.75cm} % Default amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+% Bibliography
+\newcites{Math}{Math Readings}
+\newcites{Phys}{Physics Readings}
+\lstset{
+    basicstyle=\footnotesize\ttfamily,
+    literate={~} {$\sim$}{1},
+}
+
+%	BEGIN: Document
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+%	BEGIN: TITLE PAGE
+%----------------------------------------------------------------------------------------
+\titlepage % Output the title page
+{\includegraphics[width=\paperwidth]{umn-cse-cover.png}} % Code to output the background image, which should be the same dimensions as the paper to fill the page entirely; leave empty for no background image
+{ % Title(s) and author(s)
+    \centering\sffamily % Font styling
+}
+
+{ % Title(s) and author(s)
+    \centering\sffamily % Font styling
+
+    \vspace{1cm}
+    \includegraphics[width=\textwidth]{umn-centered-digital.png}
+
+    % {\large University of Minnesota \par}
+    \vspace{1cm}
+    {\LARGE College of Science and Engineering}
+
+    \vfill
+    \vspace{2cm}
+    {\LARGE\ Subject Matter\par} % Author name
+    \vspace{0.5cm}
+    {\large Tyson M. Koch\par} % author 
+
+    \vfill
+    \includegraphics[width=.5\textwidth]{umn-logo.png}\hfill
+
+    \vspace{1cm}
+    {\small
+        % Author: Tyson M. Koch, A.S. Natural Science \\
+        Advisor: Professor Name, Ph.D.\\
+        % Assistant: Teacher Assistant Name
+    }
+
+    \vspace{1cm}
+    {\normalsize \today \par}
+    % {\normalsize November 6, 2025 \par}
+}
+
+%	BEGIN: COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+\newpage
+\thispagestyle{empty} % Suppress headers and footers on this page
+
+\includegraphics[width=.5\textwidth]{goldy-facing.png}\hfill
+
+~\vfill % Push the text down to the bottom of the page
+
+\noindent Copyright \copyright\ 2025 Tyson M. Koch\\ % Copyright notice
+
+\noindent \textsc{Published by \\ The University of Minnesota - College of Science and Engineering}\\ % Publisher
+
+\noindent \textsc{\href{https://www.latextemplates.com/template/legrand-orange-book}}\\ % URL
+
+\noindent Licensed under the Creative Commons Attribution-NonCommercial 4.0 License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{https://creativecommons.org/licenses/by-nc-sa/4.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information, replace this with your own license (if any)
+
+\noindent \textit{First printed, January 2025 by Tyson M. Koch} % Printing/edition date
+
+%	BEGIN: TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+\pagestyle{empty} % Disable headers and footers for the following pages
+\tableofcontents % Output the table of contents
+\listoffigures % Output the list of figures, comment or remove this command if not required
+\listoftables % Output the list of tables, comment or remove this command if not required
+
+\newpage
+\begin{figure}[b] % Floating figure, [b] tells LaTeX to place it at the bottom of the next available page
+    \centering % Horizontally center the figure on the page
+    \includegraphics[width=\textwidth]{umn-horizontal-digital.png}
+    \includegraphics[width=\textwidth]{goldy-running.png}\par
+    % \label{fig:umn-logo} % Unique label used for referencing the figure in-text
+\end{figure}
+
+\pagestyle{fancy} % Enable default headers and footers again
+
+% \cleardoublepage % Start the following content on a new page
+
+
+% ---------------------------------------------------------------------------------------
+% WORKING: Edit here
+% ---------------------------------------------------------------------------------------
+
+
+% WARNING: STOP!
+% ---------------------------------------------------------------------------------------
+% WARNING: Do Not Not Edit Below!
+% ---------------------------------------------------------------------------------------
+% WARNING: STOP!
+% ---------------------------------------------------------------------------------------
+
+
+% Part: Part I: Part Name
+% ---------------------------------------------------------------------------------------
+\part{Part I: Part Name}
+
+% Chapter: Chapter Name
+% ---------------------------------------------------------------------------------------
+\chapterimage{chapter-cover-two.jpg} % Chapter heading image
+\chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+\chapter{Introductions}\index{Introductions}
+
+% Section: Section Name
+% ---------------------------------------------------------------------------------------
+\section{Welcome}\index{Introductions!Welcome}
+This is a simple paragraph in LaTeX.
+
+% Part: Part I: Part Name
+% ---------------------------------------------------------------------------------------
+\part{Part II: Examples}
+
+% Chapter: Chapter Name
+% ---------------------------------------------------------------------------------------
+\chapterimage{chapter-cover-two.jpg} % Chapter heading image
+\chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+\chapter{Introductions}\index{Introductions}
+
+% Section: Introductions
+% ---------------------------------------------------------------------------------------
+\section{Basics}\index{Introductions!Basics}
+This is a simple paragraph in LaTeX.
+
+This is a new paragraph. Create a new paragraph by leaving a blank line.
+
+This line ends here.\\
+This line starts after a manual line break.
+
+You can make text \textbf{bold}, \textit{italic}, or \textbf{\textit{both}}. \\
+\noindent
+You can also use \emph{emphasis}, which is usually italicized.
+
+% Subsection: Lists
+% ---------------------------------------------------------------------------------------
+\subsection{Enumerated List}\index{Basics!Enumerate}
+\begin{enumerate}
+    \item First numbered item
+        \begin{enumerate}
+            \item First indented numbered item
+            \item Second indented numbered item
+                \begin{enumerate}
+                    \item First second-level indented numbered item
+                \end{enumerate}
+        \end{enumerate}
+    \item Second numbered item
+    \item Third numbered item
+\end{enumerate}
+
+% Subsection: Lists
+% ---------------------------------------------------------------------------------------
+\subsection{Itemize List}\index{Basics!Itemize}
+\begin{itemize}
+    \item First bullet point item
+        \begin{itemize}
+            \item First indented bullet point item
+            \item Second indented bullet point item
+                \begin{itemize}
+                    \item First second-level indented bullet point item
+                \end{itemize}
+        \end{itemize}
+    \item Second bullet point item
+    \item Third bullet point item
+\end{itemize}
+
+\newpage
+% Section: Matricies and Tables
+% ---------------------------------------------------------------------------------------
+\section{Matrices and Tables}\index{Introductions!Tables}
+
+% Subsection: Matrix
+% ---------------------------------------------------------------------------------------
+\subsection{Matrix}\index{Tables!Matrix}
+\[
+    A =
+    \begin{bmatrix}
+    1 & 2 & 3 \\
+    4 & 5 & 6
+    \end{bmatrix}
+\]
+
+% Subsection: Matrix
+% ---------------------------------------------------------------------------------------
+\subsection{Augmented Matrix}\index{Tables!Matrix}
+\[
+    M_{1} =
+    \left[
+        \begin{array}{ccc|c}
+        1 & 0 & -2 & 3 \\
+        0 & 1 &  4 & 6 \\
+        2 & -1 & 0 & -3
+        \end{array}
+    \right]
+\]
+
+% Subsection: Tables
+% ---------------------------------------------------------------------------------------
+\subsection{Tables}\index{Tables!Matrix}
+
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.25} % spacing
+        \begin{tabular}{||c c c c c c||}
+            \hline
+            $x$     & 0    & 1    & 2    & 3    & 4    \\
+            \hline
+            $f(x)$  & 0.41 & 0.37 & 0.16 & 0.05 & 0.01 \\
+            \hline
+        \end{tabular}
+
+    \caption{Example Table I}
+    \label{tab:exampletableone}
+\end{table}
+Referencing \autoref{tab:exampletableone} in-text using its label.
+
+% Section: Figures 
+% ---------------------------------------------------------------------------------------
+\section{Figures}\index{Introductions!Figures}
+\begin{figure}[H] % Use [H] to suppress floating and place the figure/table exactly where it is specified in the text
+    \centering % Horizontally center the figure on the page
+    \includegraphics[width=0.35\textwidth]{background.pdf} % Include the figure image
+    \caption{Example Figure.}
+    \label{fig:example} % Unique label used for referencing the figure in-text
+\end{figure}
+Referencing \autoref{fig:example} in-text using its label. \\
+
+% \begin{figure}[b] % Floating figure, [b] tells LaTeX to place it at the bottom of the next available page
+%     \centering % Horizontally center the figure on the page
+%     \includegraphics[width=\textwidth]{background.pdf} % Include the figure image
+%     \caption{Floating figure.}
+%     \label{fig:floating} % Unique label used for referencing the figure in-text
+% \end{figure}
+
+\newpage
+% Section: Citations 
+% ---------------------------------------------------------------------------------------
+\section{Citations}\index{Introductions!Citations}
+According to Walpole (2019), "students often had difficulty using \textbf{APA style}, especially when it was their first time" (p. 1).
+
+\noindent
+This statement requies a \textbf{citation} \cite{rosen-2019} found "students often had difficulty using APA style".
+
+This statement involkes a \textbf{footnote}, Walpole (2019) found "students often had difficulty using APA style".
+\footnote{Ronald Walpole, “Scientific Data,” essay, in Introduction to Statistics and Probability
+for Engineers and Scientists, ed. Raymond Myers, 9th ed. (Boston, MA: Pearson, 2019), p.1}
+
+% Section: Links
+% ---------------------------------------------------------------------------------------
+\section{Link}\index{Introductions!Links}
+
+This is a URL link: \href{https://www.latextemplates.com}{LaTeX Templates}. This is an email link: \href{mailto:example@example.com}{example@example.com}. This is a monospaced URL link: \url{https://www.LaTeXTemplates.com}.
+
+% Section: Code
+% ---------------------------------------------------------------------------------------
+\section{Code}\index{Introductions!Code}
+\begin{lstlisting}[language=C]
+/* prompt user for input */
+printf("prompt: ");
+
+/* scanf standard input stream */
+scanf("%modifier", address);
+\end{lstlisting}
+
+\lstinputlisting[label=snippet, caption=Coding Snippet, language=C]{source/struct.c}
+
+% Section: Basic Mathematics
+% ---------------------------------------------------------------------------------------
+\section{Basic Mathematics}\index{Introductions!Mathematics}
+Displayed equations appear centered on their own line: \\
+Inline math appears within text, like $a^2 + b^2 = c^2$.
+
+% Subsection: Fractions
+% ---------------------------------------------------------------------------------------
+\subsection{Fractions}\index{Mathematics!Fractions}
+\[
+\frac{x + 1}{x - 3}
+\]
+
+% Subsection: Subscripts & Superscripts 
+% ---------------------------------------------------------------------------------------
+\subsection{Superscripts \& Subscripts}\index{Mathematics!Exponets}
+
+% Subsubsection: Superscripts 
+% ---------------------------------------------------------------------------------------
+\subsubsection{Superscripts}\index{Exponets!Superscripts}
+$x^2$, $a^{n+1}$, $e^{i\pi} + 1 = 0$.
+
+% Subsubsection: Subscripts
+% ---------------------------------------------------------------------------------------
+\subsubsection{Subscripts}\index{Exponets!Subscripts}
+$x_1$, $a_{n}$, $A_{ij}$.
+
+\newpage
+% Section: Propositions 
+% ---------------------------------------------------------------------------------------
+\section{Propositions}\index{Introductions!Propositions}
+
+\begin{proposition} % Specify a name/title in square brackets, or leave them out for no title
+    Let $f,g\in L^2(G)$; if $\forall \varphi\in\mathcal{D}(G)$, $(f,\varphi)_0=(g,\varphi)_0$ then $f = g$. 
+\end{proposition}
+
+\begin{proposition}[Proposition name] % Specify a name/title in square brackets, or leave them out for no title
+    It has the properties:
+    \begin{align}
+        & \big| ||\mathbf{x}|| - ||\mathbf{y}|| \big|\leq || \mathbf{x}- \mathbf{y}||\\
+        &  ||\sum_{i=1}^n\mathbf{x}_i||\leq \sum_{i=1}^n||\mathbf{x}_i||\quad\text{where $n$ is a finite integer}
+    \end{align}
+\end{proposition}
+
+% Subsection: Several Equations
+%------------------------------------------------
+\subsection{Several equations}\index{Propositions!SeveralEquations}
+
+\begin{theorem}[Name of the theorem] % Specify a name/title in square brackets, or leave them out for no title
+    In $E=\mathbb{R}^n$ all norms are equivalent. It has the properties:
+    \begin{align}
+        & \big| ||\mathbf{x}|| - ||\mathbf{y}|| \big|\leq || \mathbf{x}- \mathbf{y}||\\
+        &  ||\sum_{i=1}^n\mathbf{x}_i||\leq \sum_{i=1}^n||\mathbf{x}_i||\quad\text{where $n$ is a finite integer}
+    \end{align}
+\end{theorem}
+
+% Section: Theorems
+%------------------------------------------------
+\section{Theorems}\index{Introductions!Theorems}
+
+\begin{theorem} % Specify a name/title in square brackets, or leave them out for no title
+    A set $\mathcal{D}(G)$ in dense in $L^2(G)$, $|\cdot|_0$. 
+\end{theorem}
+
+% Section: Definitions Examples 
+%------------------------------------------------
+\section{Definitions}\index{Introductions!Definitions}
+
+\begin{definition}[Definition name] % Specify a name/title in square brackets, or leave them out for no title
+    Given a vector space $E$, a norm on $E$ is an application, denoted $||\cdot||$, $E$ in $\mathbb{R}^+=[0,+\infty[$ such that:
+    \begin{align}
+        & ||\mathbf{x}||=0\ \Rightarrow\ \mathbf{x}=\mathbf{0}\\
+        & ||\lambda \mathbf{x}||=|\lambda|\cdot ||\mathbf{x}||\\
+        & ||\mathbf{x}+\mathbf{y}||\leq ||\mathbf{x}||+||\mathbf{y}||
+    \end{align}
+\end{definition}
+
+% Section: Examples 
+%------------------------------------------------
+\section{Examples}\index{Introductions!Examples}
+
+\begin{example} % Specify a name/title in square brackets, or leave them out for no title
+    Let $G=\{x\in\mathbb{R}^2:|x|<3\}$ and denoted by: $x^0=(1,1)$:
+    \begin{equation}
+        f(x)=\left\{\begin{aligned} & \mathrm{e}^{|x|} & & \text{si $|x-x^0|\leq 1/2$}\\
+        & 0 & & \text{si $|x-x^0|> 1/2$}\end{aligned}\right.
+    \end{equation}
+    The function $f$ has bounded support, we can take $A=\{x\in\mathbb{R}^2:|x-x^0|\leq 1/2+\epsilon\}$ for all $\epsilon\in\mathopen{]}0\,;5/2-\sqrt{2}\mathclose{[}$.
+\end{example}
+
+% Subsection: Text Examples 
+%------------------------------------------------
+\section{Text Example}\index{Examples!Text}
+
+\begin{example}[Example name] % Specify a name/title in square brackets, or leave them out for no title
+    Aliquam arcu turpis, ultrices sed luctus ac, vehicula id metus. Morbi eu feugiat velit, et tempus augue.
+    Donec cursus maximus luctus. Vivamus lobortis eros et massa porta porttitor.
+\end{example}
+
+\newpage
+% Section: Exercises Examples 
+%------------------------------------------------
+\section{Exercises}\index{Introductions!Exercises}
+
+\begin{exercise} % Specify a name/title in square brackets, or leave them out for no title
+    This is a good place to ask a question to test learning progress or further cement ideas into students' minds.
+\end{exercise}
+
+% Section: Equation Problems 
+%------------------------------------------------
+\section{Problems}\index{Introductions!Problems}
+
+\begin{problem} % Specify a name/title in square brackets, or leave them out for no title
+    What is the average airspeed velocity of an unladen swallow?
+\end{problem}
+
+
+% Section: Notations
+%------------------------------------------------
+\section{Notations}\index{Introductions!Notations}
+\begin{notation} % Specify a name/title in square brackets, or leave them out for no title
+    Given an open subset $G$ of $\mathbb{R}^n$, the set of functions $\varphi$ are:
+    \begin{enumerate}
+        \item Bounded support $G$;
+        \item Infinitely differentiable;
+    \end{enumerate}
+    a vector space is denoted by $\mathcal{D}(G)$. 
+\end{notation}
+
+% Section: Corollaries 
+%------------------------------------------------
+\section{Corollaries}\index{Introductions!Corollaries}
+\begin{corollary}[Corollary name] % Specify a name/title in square brackets, or leave them out for no title
+    The concepts presented here are now in conventional employment in mathematics. Vector spaces are taken over the field $\mathbb{K}=\mathbb{R}$, however, established properties are easily extended to $\mathbb{K}=\mathbb{C}$.
+\end{corollary}
+
+% Section: Remarks
+%------------------------------------------------
+\section{Remarks}\index{Introductions!Remarks}
+\begin{remark}
+    The concepts presented here are now in conventional employment in mathematics. Vector spaces are taken over the field $\mathbb{K}=\mathbb{R}$, however, established properties are easily extended to $\mathbb{K}=\mathbb{C}$.
+\end{remark}
+
+% Section: Vocabulary 
+%------------------------------------------------
+\section{Vocabulary}\index{Introductions!Vocabulary}
+
+\begin{vocabulary}[Word] % Specify a name/title in square brackets, or leave them out for no title
+    Definition of word.
+\end{vocabulary}
+
+\newpage
+% Section: Calculus 
+% ---------------------------------------------------------------------------------------
+\section{Calculus}\index{Mathematics!Calculus}
+
+% Subsection: Cases 
+% ---------------------------------------------------------------------------------------
+\subsection{Cases}\index{Calculus!Cases}
+\textbf{Cases:} \\
+\begin{flalign*}
+    \tilde{x} =
+    \begin{cases}
+        x_{(n-1)/2} & \text{if n is odd} \\
+        \frac{1}{2}(x_{n/2} + x_{n/2+1}) & \text{if n is even} \\
+    \end{cases}
+\end{flalign*} \\
+
+% Subsection: Limits & Summations 
+% ---------------------------------------------------------------------------------------
+\subsection{Limits \& Summations}\index{Calculus!Summations}
+\noindent
+\textbf{Summations:} \\
+\begin{flalign*}
+    \overline{x} = \sum_{i=1}^{n} \frac{x_i}{n} = \frac{x_1 + x_2 + \dots + x_n}{n}
+\end{flalign*} \\
+
+\noindent
+\textbf{Limits:} \\
+\[
+\lim_{x \to 0} \frac{\sin x}{x} = 1
+\] \\
+
+% Subsection: Derivatives 
+% ---------------------------------------------------------------------------------------
+\subsection{Derivatives}\index{Calculus!Derivatives}
+\textbf{Derivative}
+\[
+\frac{d}{dx} x^2 = 2x
+\] \\
+
+\noindent
+\textbf{Higher-order derivative:}
+\[
+\frac{d^2}{dx^2} x^3 = 6x
+\] \\
+
+% Subsection: Integrals 
+% ---------------------------------------------------------------------------------------
+\subsection{Integrals}\index{Calculus!Integrals}
+\textbf{Indefinite:}
+\[
+\int x^2 \, dx = \frac{x^3}{3} + C
+\] \\
+
+\noindent
+\textbf{Definite:}
+\[
+\int_{0}^{1} x^2 \, dx = \frac{1}{3}
+\]
+
+% Part: Part: End Matter
+% ---------------------------------------------------------------------------------------
+\part{Part: End Matter}
+
+%----------------------------------------------------------------------------------------
+\stopcontents[part] % Manually stop the 'part' table of contents here so the previous
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage % Make sure the index starts on an odd (right side) page
+\phantomsection
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}} % Add an Index heading to the table of contents
+\printindex % Output the index
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+% \bibliographystyle{unsrt}
+\bibliographystyle{apalike}
+\bibliography{references}
+\markboth{\sffamily\normalsize\bfseries Bibliography}{\sffamily\normalsize\bfseries Bibliography} % Set the page headers to display a Bibliography chapter name
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}} % Add a Bibliography heading to the table of contents
+
+%----------------------------------------------------------------------------------------
+%	APPENDICES
+%----------------------------------------------------------------------------------------
+
+\chapterimage{chapter-cover-two.jpg} % Chapter heading image
+\chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+\begin{appendices}
+    \renewcommand{\chaptername}{Appendix} % Change the chapter name to Appendix, i.e. "Appendix A: Title", instead of "Chapter A: Title" in the headers
+    \chapter{Appendix}
+    \section{Appendix Section Title}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor mi risus, quis tempor libero hendrerit at.
+    Duis hendrerit placerat quam et semper. Nam ultricies metus vehicula arcu viverra, vel ullamcorper justo elementum.
+    Pellentesque vel mi ac lectus cursus posuere et nec ex. Fusce quis mauris egestas lacus commodo venenatis.
+    Ut at arcu lectus. Donec et urna nunc. Morbi eu nisl cursus sapien eleifend tincidunt quis quis est. Donec ut orci ex.
+    Praesent ligula enim, ullamcorper non lorem a, ultrices volutpat dolor. Nullam at imperdiet urna. 
+    Pellentesque nec velit eget est euismod pretium.
+\end{appendices}
+
+%----------------------------------------------------------------------------------------
+\end{document}
+%----------------------------------------------------------------------------------------

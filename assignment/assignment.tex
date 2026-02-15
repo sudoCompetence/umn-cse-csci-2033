@@ -1,0 +1,37 @@
+% Document Class
+\documentclass{assignment}
+
+% File header
+\newcommand*{\name}{Tyson M. Koch}
+\newcommand*{\id}{5225552}
+\newcommand*{\course}{Course Name}
+\newcommand*{\todaysDate}{\normalsize \today}
+\newcommand*{\assignment}{Assignment Name}
+\newcommand*{\assignmentQuote}{"...the proof is trivial and is left as an exercise for the reader." - Unknown}
+% \newcommand*{\assignmentQuote}{"We the people. We hold these proofs to be self evident." - Unknown}
+\pagestyle{fancy}
+
+\begin{document}\doublespacing\maketitle
+
+% BEGIN: Begin document 
+% ---------------------------------------------------------------------------------------------------
+\begin{problem}{1}
+    \begin{proof}
+        Induction on n. \\
+        \textbf{Base case (n = 1): } $N(1) = 9 = 10^1 -1 = 10 - 1 = 9$ \\
+        \textbf{Inductive Hypothesis: } Assume $N(k) = 10^k - 1 \text{ for all } k > 0$ \\
+        \textbf{Inductive Step: } [Show that: $N(k+1) = 10^{k+1} - 1$ for all $k > 0$]
+        \begin{align*}
+            N(k+1) & = 10[n(k)] +9         && \text{[i.e.) $N(3) = 999 = 10[n(2)] + 9 = 10(99) + 9 = 990 + 9 = 999$]} \\
+                   & = 10[10^k - 1] + 9    && \text{[Inductive Hypothesis]} \\
+                   & = (10)(10)^k - 10 + 9 \\
+                   & = 10^{k+1} - 10 + 9   && \text{[Definition of a Exponent]} \\
+                   & = 10^{k+1} - 1
+        \end{align*}
+        $\therefore$ By the principle of mathematical induction, $N(k+1) = 10^{k+1} - 1$ for all $k > 0$
+    \end{proof}
+\end{problem}
+
+% END: End document 
+% ---------------------------------------------------------------------------------------------------
+\end{document}
