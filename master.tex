@@ -704,7 +704,7 @@ as rotation, reﬂection or translation,
 \end{definition}
 
 \newpage
-\begin{exercise}{Matrix Form $Ax=b$}
+\begin{example}{Matrix Form $Ax=b$}
     \begin{proposition}
         \textit{Let:}
         \begin{alignat}{3}
@@ -733,7 +733,7 @@ as rotation, reﬂection or translation,
     \begin{displaymath}
         A\mathbf{x}=\mathbf{b}
     \end{displaymath}
-\end{exercise}
+\end{example}
 
 \begin{definition}
     \textbf{Matrix-Vector Multiplication} \\
@@ -883,6 +883,13 @@ result is absolutely correct and permanent." \cite{singh-2013}
             0 & 0 & \cdots & 1
         \end{bmatrix}
     \end{displaymath}
+    \begin{displaymath}
+        (I_n)_{ij} =
+        \begin{cases}
+            1 & \text{if } i = j \\
+            0 & \text{if } i \neq j
+        \end{cases}
+    \end{displaymath}
 \end{definition}
 
 \begin{definition}
@@ -990,6 +997,79 @@ result is absolutely correct and permanent." \cite{singh-2013}
         \item \((c + k)A = cA + kA\)
     \end{enumerate}
 \end{theorem}
+
+
+% Section: Transpost & Inverse of a Matrix
+% ---------------------------------------------------------------------------------------
+\section{Transport \& Inverse of a Matrix}\index{Matricies!TransposeInverse}
+The transpose of a matrix is obtained by interchanging its rows and columns. The inverse of a
+square matrix $A$ is a matrix $A^{-1}$ such that $AA^{-1} = A^{-1}A = I$, where $I$ is the identity matrix.
+Not all matrices have inverses; those that do are called invertible or non-singular.
+
+\begin{definition}[Transpose of Matrix]
+    The transpose of a matrix \(A\), denoted by \(A^T\), is obtained by interchanging the rows and columns of \(A\).
+    \begin{displaymath}
+        A =
+        \begin{bmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{m1} & a_{m2} & \cdots & a_{mn}
+        \end{bmatrix}
+        \implies
+        A^T =
+        \begin{bmatrix}
+            a_{11} & a_{21} & \cdots & a_{m1} \\
+            a_{12} & a_{22} & \cdots & a_{m2} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{1n} & a_{2n} & \cdots & a_{mn}
+        \end{bmatrix}
+    \end{displaymath}
+\end{definition}
+\begin{theorem}[Properties of Matrix Transpose]
+    Let \(A\) and \(B\) be matrices of appropriate sizes, and let \(k\) be a scalar. Then:
+    \begin{enumerate}
+        \item $(A^T)^T = A$
+        \item $(A + B)^T = A^T + B^T$
+        \item $(kA)^T = kA^T$
+        \item If $AB$ is defined, then $(AB)^T = B^TA^T$
+    \end{enumerate}
+\end{theorem}
+
+\begin{definition}[Inverse of a Matrix]
+    The inverse of a square matrix \(A\), denoted by \(B = A^{-1}\), is a matrix such that
+    \begin{displaymath}
+        AA^{-1} = AB = A^{-1}A = BA = I,
+    \end{displaymath}
+    where \(I\) is the identity matrix. A matrix \(A\) is invertible if and only if there exists a matrix \(A^{-1}\) satisfying this condition.
+\end{definition}
+
+\begin{theorem}[Properties of Matrix Inverse]
+    Let \(A\) and \(B\) be invertible matrices of the same size, and let \(k\) be a nonzero scalar. Then:
+    \begin{enumerate}
+        \item \((A^{-1})^{-1} = A\)
+        \item \((AB)^{-1} = B^{-1}A^{-1}\)
+        \item \((A^T)^{-1} = (A^{-1})^T\)
+    \end{enumerate}
+\end{theorem}
+
+\begin{example}
+    \textbf{Solving Linear Systems using Matrix Inverse} \\
+    \begin{proposition}
+        \textit{Let:}
+        \begin{align}
+            Ax = b
+        \end{align}
+    \end{proposition}
+
+    \begin{alignat}{3}
+        A^{-1}Ax &= A^{-1}b \\
+        Ix &= A^{-1}b \mid (A^{-1}A=I) \\
+        x &= A^{-1}b
+    \end{alignat}
+    $\therefore$ If \(A\) is invertible, the solution to the linear system
+    \(Ax = b\) can be expressed as \(x = A^{-1}b\).
+\end{example}
 
 
 % WARNING: STOP!
